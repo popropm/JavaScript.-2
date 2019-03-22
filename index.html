@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eShop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="Basket.js" defer></script>
+    <script src="form.js" defer></script>
+</head>
+<body>
+<header><input type="text" class="goods-search">
+    <button class="search-button"> Искать</button>
+    <button class="cart-button" type="button">Корзина</button>
+    <div class="simpleCart_items"></div>
+</header>
+<main>
+    <div class="goods-list"></div>
+    <div class="backed"></div>
+</main>
+<div id="wrapper">
+    <form id="form" class="form">
+        <div class="form__header">Заполните форму обратной связи</div>
+        <input id="form__input-name" class="form__input" name="name" placeholder="Имя..." type="text" required/>
+        <div id="form__message-name" class="form__message"></div>
+        <input id="form__input-phone" class="form__input" name="phone" placeholder="Номер телефона..." type="text"
+               required/>
+        <div id="form__message-phone" class="form__message"></div>
+        <input id="form__input-email" class="form__input" name="emailaddress" placeholder="E-mail..." type="text"
+               required/>
+        <div id="form__message-email" class="form__message"></div>
+        <textarea id="form__text" name="text" class="form__text" rows="20" cols="40" placeholder="Текст..."></textarea>
+        <input id="form__button-clear" class="form__button form__button-clear" name="reset" type="reset" value="Сброс"/>
+        <input id="form__button-submit" class="form__button" name="submit" type="submit" value="Отправить"/></form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+</body>
+</html>
