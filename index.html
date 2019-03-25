@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <title>eShop</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script src="Basket.js" defer></script>
-    <script src="form.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/Basket.js"></script>
+    <script src="js/form.js" ></script>
+    <script src="js/Good.js"></script>
+    <script src="js/ltem.js"></script>
+
 </head>
 <body>
-<header><input type="text" class="goods-search">
-    <button class="search-button"> Искать</button>
-    <button class="cart-button" type="button">Корзина</button>
-    <div class="simpleCart_items"></div>
-</header>
-<main>
-    <div class="goods-list"></div>
-    <div class="backed"></div>
-</main>
+<div id="app">
+        <header>
+            <button class="cart-button" v-on:click="visibleBasket">Корзина</button>
+            <search-input v-model="filter"></search-input>
+        </header>
+    <main>
+        <div class="goods-list">
+            <div class="goods-item" v-for="item in filteredGoods">
+                <div class="img"></div>
+                <h3>{{item.title}}</h3>
+                <p>{{item.price}}</p>
+                <div class="button">Купить</div>
+            </div>
+        </div>
+    </main>
+    <div id="basket" v-bind:style="isVisibleCart">
+        <div id="itemsPool">
+        </div>
+    </div>
+</div>
+
+
+
+
 <div id="wrapper">
     <form id="form" class="form">
         <div class="form__header">Заполните форму обратной связи</div>
@@ -34,6 +52,5 @@
         <input id="form__button-submit" class="form__button" name="submit" type="submit" value="Отправить"/></form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-
 </body>
 </html>

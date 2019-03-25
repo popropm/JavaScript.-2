@@ -68,5 +68,3 @@ Form.prototype.validate = function (myIds, myTypes) {
     }
 };
 
-
-

@@ -1,6 +1,7 @@
 class Basket {
     constructor(items = []) {
         this.items = items;
+        this.isVisibleCart = false;
     }
 
     addItems(items = []) {
