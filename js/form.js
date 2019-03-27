@@ -11,7 +11,6 @@ function Container() {
 Container.prototype.render = function () {
     return this.htmlCode;
 };
-
 function Form(myId, myClass, myName, myPhone, myEmail, myText) {
     Container.call(this);
     this.id = myId;

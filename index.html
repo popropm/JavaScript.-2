@@ -1,41 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>eShop</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/script.js" defer></script>
     <script src="js/Basket.js"></script>
-    <script src="js/form.js" ></script>
-    <script src="js/Good.js"></script>
     <script src="js/ltem.js"></script>
-
+    <script src="js/form.js"></script>
+    <script defer src="js/script.js"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div id="app">
-        <header>
-            <button class="cart-button" v-on:click="visibleBasket">Корзина</button>
-            <search-input v-model="filter"></search-input>
-        </header>
+    <alert v-if="filteredGoods.length === 0"></alert>
+    <header>
+        <button class="cart-button" v-on:click="visibleBasket"> Корзина</button>
+        <search-input v-on:input="search"></search-input>
+    </header>
     <main>
         <div class="goods-list">
-            <div class="goods-item" v-for="item in filteredGoods">
-                <div class="img"></div>
-                <h3>{{item.title}}</h3>
-                <p>{{item.price}}</p>
-                <div class="button">Купить</div>
-            </div>
+            <template v-if="filteredGoods.length > 0">
+                <div class="goods-item" v-for="item in filteredGoods">
+                    <div class="icon"></div>
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.price}}</p>
+                    <div class="buttonToCart">Купить</div>
+                </div>
+            </template>
+            <template v-else>
+                Нет данных!
+            </template>
         </div>
     </main>
-    <div id="basket" v-bind:style="isVisibleCart">
-        <div id="itemsPool">
-        </div>
-    </div>
+    <basket v-if="isVisibleCart"></basket>
 </div>
-
-
-
-
 <div id="wrapper">
     <form id="form" class="form">
         <div class="form__header">Заполните форму обратной связи</div>
@@ -51,6 +50,8 @@
         <input id="form__button-clear" class="form__button form__button-clear" name="reset" type="reset" value="Сброс"/>
         <input id="form__button-submit" class="form__button" name="submit" type="submit" value="Отправить"/></form>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 </html>
