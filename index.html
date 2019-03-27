@@ -5,35 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>eShop</title>
-    <script src="js/Basket.js"></script>
-    <script src="js/ltem.js"></script>
-    <script src="js/form.js"></script>
     <script defer src="js/script.js"></script>
+    <script src="js/Basket.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/Good.js"></script>
+    <script src="js/ltem.js"></script>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div id="app">
-    <alert v-if="filteredGoods.length === 0"></alert>
     <header>
         <button class="cart-button" v-on:click="visibleBasket"> Корзина</button>
-        <search-input v-on:input="search"></search-input>
+        <label> Поиск: <input v-model="filter" type="text" title="search" v-on:input="search"></label>
     </header>
     <main>
-        <div class="goods-list">
-            <template v-if="filteredGoods.length > 0">
-                <div class="goods-item" v-for="item in filteredGoods">
-                    <div class="icon"></div>
-                    <h3>{{item.title}}</h3>
-                    <p>{{item.price}}</p>
-                    <div class="buttonToCart">Купить</div>
-                </div>
-            </template>
-            <template v-else>
-                Нет данных!
-            </template>
-        </div>
+        <div class="goods-list"></div>
     </main>
-    <basket v-if="isVisibleCart"></basket>
+    <div id="basket" v-bind:style="isVisibleCart">
+        <div id="itemsPool">
+        </div>
+    </div>
 </div>
 <div id="wrapper">
     <form id="form" class="form">

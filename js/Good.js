@@ -8,14 +8,14 @@ class GoodsList {
     fetchGoods() {
         return new Promise(function (resolve, reject) {
             this.goods = [
-                { title: 'Shirt', price: 150 },
-                { title: 'Socks', price: 50 },
-                { title: 'Jacket', price: 350 },
-                { title: 'Shoes', price: 250 },
-                { title: 'Shirt', price: 150 },
-                { title: 'Socks', price: 50 },
-                { title: 'Jacket', price: 350 },
-                { title: 'Shoes', price: 250 }
+                {title: 'Shirt', price: 150},
+                {title: 'Socks', price: 50},
+                {title: 'Jacket', price: 350},
+                {title: 'Shoes', price: 350},
+                {title: 'Shirt', price: 150},
+                {title: 'Socks', price: 50},
+                {title: 'Jacket', price: 350},
+                {title: 'Shoes', price: 350},
             ];
             resolve();
         }.bind(this))
@@ -51,7 +51,7 @@ class GoodsList {
                 <div class="img"></div>
                 <h3>${item.title}</h3>
                 <p>${item.price}</p>
-                <div class="button" id="${item.title}">Добавить</div>
+                <div class="button" id="${item.title}">Купить</div>
             </div>`
             });
             document.querySelector('.goods-list').innerHTML = goodsList.join('');
