@@ -1,0 +1,51 @@
+header{
+    margin: 0 auto;
+    width: 80%;
+    text-align: right;
+    background-color: #a99d98;
+    padding: 20px;
+
+}
+.goods-list{
+    width: 80%;
+    margin: 20px auto;
+    background-color: #ffefe4;
+    text-align: center;
+    padding: 20px;
+}
+.cart-button{
+    border-radius: 7px;
+    width: 160px;
+}
+
+.goods-item{
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    margin: 20px 10px;
+    border: 1px solid black;
+    text-align: center;
+
+}
+.button{
+    border-radius: 5px;
+}
+#basket{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: #f0ffeb;
+    margin: 50 auto;
+    display: none;
+}
+#buttonCart{
+    float: right;
+}
+.error{
+    text-align: center;
+    background-color: red;
+    padding: 60px;
+    font: bold 50px Arial;
+    color: white;
+}
